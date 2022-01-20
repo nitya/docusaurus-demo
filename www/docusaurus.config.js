@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Dino-might!',
   tagline: 'Dinosaurs are cool',
-  url: 'https://nitya.github.io/docusaurus-demo',
-  baseUrl: '/docusaurus-demo/',
+  url: 'https://docu-demo.nitya.dev',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
