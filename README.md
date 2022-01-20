@@ -1,4 +1,5 @@
 # Docusaurus Demo
+[![pages-build-deployment](https://github.com/nitya/docusaurus-demo/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/nitya/docusaurus-demo/actions/workflows/pages/pages-build-deployment)
 
 > OBJECTIVE 
 
