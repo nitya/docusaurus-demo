@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://nitya.github.io/docusaurus-demo/docusaurus-demo/blog</id>
+    <id>https://docu-demo.nitya.dev/blog</id>
     <title>Dino-might! Blog</title>
     <updated>2022-01-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://nitya.github.io/docusaurus-demo/docusaurus-demo/blog"/>
+    <link rel="alternate" href="https://docu-demo.nitya.dev/blog"/>
     <subtitle>Dino-might! Blog</subtitle>
-    <icon>https://nitya.github.io/docusaurus-demo/docusaurus-demo/img/favicon.ico</icon>
+    <icon>https://docu-demo.nitya.dev/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Hello World!]]></title>
         <id>hello-world</id>
-        <link href="https://nitya.github.io/docusaurus-demo/docusaurus-demo/blog/hello-world"/>
+        <link href="https://docu-demo.nitya.dev/blog/hello-world"/>
         <updated>2022-01-17T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hello and welcome to my new Docusaurus Demo site - a sandbox for exploring features of this platform and creating a static website+blog template that I can use for various projects!]]></summary>
         <content type="html"><![CDATA[<p>Hello and welcome to my new Docusaurus Demo site - a sandbox for exploring features of this platform and creating a static website+blog template that I can use for various projects!</p><hr/><p>You can also check out my visual storytelling adventures on my <a href="https://sketchthedocs.dev">SketchTheDocs.Dev</a> website - or by following <a href="https://twitter.com/sketchthedocs">@sketchthedocs</a> on Twitter.</p><p><img src="https://pbs.twimg.com/profile_banners/1363508157092356098/1626888338/1500x500" alt="Twitter Banner from the SketchTheDocs Account"/></p><hr/><p>Let&#x27;s Go Docu-venturing!</p>]]></content>
