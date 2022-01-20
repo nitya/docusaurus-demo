@@ -9,7 +9,7 @@ const config = {
   title: 'Dino-might!',
   tagline: 'Dinosaurs are cool',
   url: 'https://nitya.github.io/docusaurus-demo',
-  baseUrl: '/',
+  baseUrl: '/docusaurus-demo/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
