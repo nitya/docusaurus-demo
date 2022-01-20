@@ -1,11 +1,7 @@
 ---
 slug: hello-world
 title: Hello World!
-authors:
-  - name: Nitya Narasimhan
-    title: Visual Storyteller & Developer Advocate
-    url: https://github.com/nitya
-    image_url: https://github.com/nitya.png
+authors: nitya
 tags: [general]
 ---
 

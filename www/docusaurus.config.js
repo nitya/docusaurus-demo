@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
@@ -6,16 +6,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: 'Dino-might!',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://nitya.github.io/docusaurus-demo',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
+  // -- Adding for Deployment Configuration
+  organizationName: 'nitya', //  user
+  projectName: 'docusaurus-demo', // repo
+  deploymentBranch: `gh-pages`, // default = gh-pages
   presets: [
     [
       'classic',
@@ -43,9 +45,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Dino-might!',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Dino-might Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -55,9 +57,13 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            to: '/blog',
+             label: 'Blog', 
+             position: 'left'
+          },
+          {
+            href: 'https://github.com/nitya/docusaurus-demo',
             label: 'GitHub',
             position: 'right',
           },
