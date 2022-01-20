@@ -18,5 +18,5 @@ jobs:
       - name: Test build
         working-directory: www
         run: |
-          npm ci
+          npm install
           npm run build
