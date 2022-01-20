@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: 14.x
           cache: npm
+          cache-dependency-path: www/package-lock.json
       - name: Build website
         working-directory: www
         run: |
-          cd www
           npm ci
           npm run build
 
