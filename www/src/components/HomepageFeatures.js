@@ -4,32 +4,29 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Fundamentals',
+    Svg: require('../../static/img/undraw_pair_programming.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Let's talk about what X is and why it matters. What are the core components of X and how can you get started using it?
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Deep Dives',
+    Svg: require('../../static/img/undraw_web_search.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Time to look under the hood. Let's dive into the details of how X works, how to architect solutions using it.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Best Practices',
+    Svg: require('../../static/img/undraw_web_devices.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Ready to move to production? Let's talk about tools, tips and tricks to optimize your performance and minimize failures!
       </>
     ),
   },

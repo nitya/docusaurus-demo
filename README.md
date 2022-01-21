@@ -78,7 +78,13 @@ Let's explore [this tutorial](https://docusaurus.io/docs/deployment#deploying-to
 | 2. [Configure publishing source for GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)| Use the _Pages_ Settings to setup a default `gh-pages` branch. This publishes the page to [https://nitya.github.io/docusaurus-demo/](https://nitya.github.io/docusaurus-demo/) |
 | 3. [Setup GitHub Actions for auto-deploy](https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions) | We want this to auto-deploy build to gh-pages when new commit is made to `main/`. Follow the directions for "Same" repo - add `deploy.yml` and `test-deploy.yml` to `.github/workflows` -- commit changes! I used `www/**` for paths) and `npm` for build)  |
 | 4. [Visit Actions Dashboard](https://github.com/nitya/docusaurus-demo/actions) | Commits should trigger action - verify that build/deploy works. |
-| 5. [Add CNAME for Custom Domain](https://docusaurus.io/docs/deployment#github-pages-overview) | Create `CNAME` file in static directory - move configuration back to `baseUrl:'/'` and set `url` to custom domain. Note that you need to [configure DNS](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) on your domain provider site.|
+| 5. [Add CNAME for Custom Domain](https://docusaurus.io/docs/deployment#github-pages-overview) | Create `CNAME` file in static directory - move configuration back to `baseUrl:'/'` and set `url` to custom domain. Note that you need to [configure DNS](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) on your domain provider site. Don't forget to "Enable HTTPS" in Pages settings. May need to wait a while before domain is activated!|
+| [Customize Styling](https://docusaurus.io/docs/styling-layout#global-styles)| Use the [recommended tool](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima) to generate a color palette that works for dark/light modes etc. You can also use [Themed Images](https://docusaurus.io/docs/markdown-features/assets#themed-images) to provide alternate versions of images suitable for dark/light themes. (Not tried  yet!)|
+
+| In the last step for instance, you can generate CSS styles for dark and light modes that are optimized for contrast etc. as seen below. |
+|:---|
+| ![Dark Palette Example](dark-palette.png) |
+| ![Light Palette Example](light-palette.png) |
 
 ---
 

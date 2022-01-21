@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Dino-might!',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Blowing up the Internet!',
   url: 'https://docu-demo.nitya.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -86,15 +86,11 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/javascript',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/nitya',
               },
             ],
           },
@@ -107,7 +103,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/nitya/docusaurus-demo',
               },
             ],
           },
