@@ -22,11 +22,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Best Practices',
+    title: 'Advanced Concepts',
     Svg: require('../../static/img/undraw_web_devices.svg').default,
     description: (
       <>
-        Ready to move to production? Let's talk about tools, tips and tricks to optimize your performance and minimize failures!
+        Thinking production ready? Want to explore advanced features for modern apps? Let's talk tips, tricks and tools!
       </>
     ),
   },

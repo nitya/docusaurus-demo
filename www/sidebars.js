@@ -20,22 +20,22 @@ const sidebars = {
   // But you can create a sidebar manually
   tutorialSidebar: [
     {
-      'Getting Started' : ['intro', 'install'],
-    },
-    {
-      'Tutorial-Basics' : [
-        'tutorial-basics/create-a-page',
-        'tutorial-basics/create-a-document',
-        'tutorial-basics/create-a-blog-post', 
-        'tutorial-basics/markdown-features',
-        'tutorial-basics/deploy-your-site',
-        'tutorial-basics/congratulations',
+      'Fundamentals' : [
+        `intro`,
+        'fundamentals/install', 
+        'fundamentals/config',
       ],
     },
     {
-      'Tutorial-Extras' : [
-        'tutorial-extras/manage-docs-versions',
-        'tutorial-extras/translate-your-site',
+      'Deep Dives' : [
+        `deep-dives/intro`,
+        
+      ],
+    },
+    {
+      'Advanced Concepts' : [
+        `advanced/intro`,
+
       ],
     },
   ],

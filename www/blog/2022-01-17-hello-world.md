@@ -5,13 +5,24 @@ authors: nitya
 tags: [general]
 ---
 
-Hello and welcome to my new Docusaurus Demo site - a sandbox for exploring features of this platform and creating a static website+blog template that I can use for various projects!
+Welcome to Dino-Might!! A sandbox that I am using to get familiar with the features and API provided by [Docusaurus](https://docusaurus.io/) - a static site generator.
+
+The goal is to get to a template that I can repurpose for setting up project-specific blogs, documentation sites or portfolio pages. 
 
 ---
 
-You can also check out my visual storytelling adventures on my [SketchTheDocs.Dev](https://sketchthedocs.dev) website - or by following [@sketchthedocs](https://twitter.com/sketchthedocs) on Twitter.
+Some things I want to explore:
 
-![Twitter Banner from the SketchTheDocs Account](https://pbs.twimg.com/profile_banners/1363508157092356098/1626888338/1500x500)
+ * `Scaffolding` = what does the boilerplate experience look like?
+ * `Deployment` = how easily can I deploy this to various hosting providers?
+ * `Tooling` = what dev tools exist for authoring, testing, CI/CD and auditing?
+ * `PWA` = how easily can I refactor this to be a progressive web app?
+ * `Testing` = how I do implement cross-browser testing and automation?
+ * `Authoring` = how do I use MDX and React support for richer UI/UX?
+ * `Modern` = how do I design for accessibility, localization, performance?
+ * `Integration` = does this play well with others (e.g., frameworks & services)
+
+I'll be overhauling the [Tutorials](/docs/intro) section to document my learnings as I go.
 
 ---
 
