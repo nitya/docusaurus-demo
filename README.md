@@ -79,13 +79,6 @@ Let's explore [this tutorial](https://docusaurus.io/docs/deployment#deploying-to
 | 3. [Setup GitHub Actions for auto-deploy](https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions) | We want this to auto-deploy build to gh-pages when new commit is made to `main/`. Follow the directions for "Same" repo - add `deploy.yml` and `test-deploy.yml` to `.github/workflows` -- commit changes! I used `www/**` for paths) and `npm` for build)  |
 | 4. [Visit Actions Dashboard](https://github.com/nitya/docusaurus-demo/actions) | Commits should trigger action - verify that build/deploy works. |
 | 5. [Add CNAME for Custom Domain](https://docusaurus.io/docs/deployment#github-pages-overview) | Create `CNAME` file in static directory - move configuration back to `baseUrl:'/'` and set `url` to custom domain. Note that you need to [configure DNS](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) on your domain provider site. Don't forget to "Enable HTTPS" in Pages settings. May need to wait a while before domain is activated!|
-| [Customize Styling](https://docusaurus.io/docs/styling-layout#global-styles)| Use the [recommended tool](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima) to generate a color palette that works for dark/light modes etc. You can also use [Themed Images](https://docusaurus.io/docs/markdown-features/assets#themed-images) to provide alternate versions of images suitable for dark/light themes. (Not tried  yet!)|
-
-| In the last step for instance, you can generate CSS styles for dark and light modes that are optimized for contrast etc. as seen below. |
-|:---|
-| ![Dark Palette Example](dark-palette.png) |
-| ![Light Palette Example](light-palette.png) |
-
 ---
 
 ## 5. Deployment to Azure Static Web Apps
@@ -102,4 +95,32 @@ Learn more about [Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/
 
 I'll capture any notes/a-ha moments from my exploration here.
 
----
+
+### 6.1 [Customize Styling](https://docusaurus.io/docs/styling-layout#global-styles)
+
+> Use the [recommended tool](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima) to generate a color palette that works for dark/light modes etc. Use [Themed Images](https://docusaurus.io/docs/markdown-features/assets#themed-images) to provide alternate versions of images suitable for dark/light themes. |
+
+In the last step for instance, you can generate CSS styles for dark and light modes that are optimized for contrast etc. as seen below. 
+
+| | |
+|:---| :---|
+| ![Dark Palette Example](dark-palette.png) | ![Light Palette Example](light-palette.png) |
+
+This gives you nice themed pages for your site! (TODO: Try themed images) 
+
+| | |
+|:---| :---|
+| ![Dino-Might Dark](dinomight-dark.png) | ![Dino-Might Light](dinomight-light.png) |
+
+
+## 6.2 [Audit with PWA Builder](https://www.pwabuilder.com/)
+
+> What if I want this website to be available offline, or installable on desktop/mobile (like a native app)? Making it a [Progressive Web App](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/) can help. And the [PWABuilder Audit](https://blog.pwabuilder.com/posts/introducing-the-brand-new-pwa-builder/) can grade your app and recommend changes to make.
+
+| Here is the initial PWABuilder audit report for the [deployed website](https://docu-demo.nitya.dev/). |
+|:---|
+| ![PWA Builder Audit](pwabuilder-audit.png) |
+| Looks like we need to put in a bit of work - starting with adding a Manifest and Service Worker, then iteratively auditing for performance and other optmizations. The report does provide us assistance in creating the required files interactively. The video below shows the options available. |
+
+
+
