@@ -120,7 +120,7 @@ This gives you nice themed pages for your site! (TODO: Try themed images)
 | Here is the initial PWABuilder audit report for the [deployed website](https://docu-demo.nitya.dev/). |
 |:---|
 | ![PWA Builder Audit](pwabuilder-audit.png) |
-| Looks like we need to put in a bit of work - starting with adding a Manifest and Service Worker, then iteratively auditing for performance and other optmizations. The report does provide us assistance in creating the required files interactively. The video below shows the options available. |
+| Looks like we need to put in a bit of work - starting with adding a Manifest and Service Worker, then iteratively auditing for performance and other optmizations. The report does provide us assistance in creating the required files interactively. |
 
 
 
