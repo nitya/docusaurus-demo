@@ -336,12 +336,21 @@ PWABuilder lets you create icons, screenshots and manifest interactively - so I 
 
 Docusaurus [plugin-pwa](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa) is configured as follows:
 
+ * Install the plugin: `$cd www; npm install --save @docusaurus/plugin-pwa` 
  * Requires Manifest to be in `static/manifest.json`. See an [example manifest](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#manifest-example) for reference.
  * Requires `docusaurus.config.js` to be updated to configure plugin - see [example](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#configuration) and [supported options](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#options).
 
 This configures your app to use the referenced manifest (to set as `<HEAD>` link) and set the relevant policies (for service worker).
 
 > 3. TEST PWA
+
+Want to test this locally? The plugin activates only for production builds, so clear-build-and-serve:
+```
+$ cd www/
+$ npm run clear
+$ npm run build
+$ npm run serve
+```
 
 You'll need to deploy this to a host supporting `HTTPS` - so this is a good time to commit changes and trigger deploy actions. Then test site PWA capabilities in two contexts:
  * [App Installation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#app-installation-support)
