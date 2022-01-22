@@ -118,4 +118,39 @@ const config = {
     }),
 };
 
+
+  // -- Adding for PWA Plugin
+  module.exports = {
+    plugins: [
+      [
+        '@docusaurus/plugin-pwa',
+        {
+          debug: true,
+          offlineModeActivationStrategies: [
+            'appInstalled',
+            'standalone',
+            'queryString',
+          ],
+          pwaHead: [
+            {
+              tagName: 'link',
+              rel: 'icon',
+              href: '/img/docusaurus.png',
+            },
+            {
+              tagName: 'link',
+              rel: 'manifest',
+              href: '/manifest.json', // your PWA manifest
+            },
+            {
+              tagName: 'meta',
+              name: 'theme-color',
+              content: '#b00303',
+            },
+          ],
+        },
+      ],
+    ],
+  };
+
 module.exports = config;
