@@ -1,0 +1,54 @@
+{
+    "background_color": "none",
+    "description": "A sandbox app to explore various features of the Docusaurus static site builder. Use as a template for other projects, or browse the tutorials section to build  this from scratch.",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Docusaurus Demo",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "short_name": "Docu-Demo",
+    "start_url": "/",
+    "theme_color": "#af0404",
+    "categories": [],
+    "icons": [
+      {
+        "src": "icons/icon-48x48.png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "icons/icon-512x512.png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "icons/icon-2480x1200.png",
+        "sizes": "2480x1200"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "screenshots/home-desktop",
+        "sizes": "1280x800",
+        "platform": "wide",
+        "label": "Homescreen of Docusaurus Demo PWA"
+      },
+      {
+        "src": "screenshots/home-mobile",
+        "sizes": "750x1334",
+        "platform": "narrow",
+        "label": "Homescreen of Docusaurus Demo PWA"
+      },
+      {
+        "src": "screenshots/blog-desktop",
+        "sizes": "1280x800",
+        "platform": "wide",
+        "label": "Blog page of Docusaurus Demo PWA"
+      },
+      {
+        "src": "screenshots/blog-mobile",
+        "sizes": "750x1334",
+        "platform": "narrow",
+        "label": "Blog page of Docusaurus Demo PWA"
+      }
+    ],
+    "shortcuts": []
+}
