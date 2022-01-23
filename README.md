@@ -201,7 +201,7 @@ With PWA, you get the reach of web apps with the richer experience of platform (
 
 ### 1.1 [Run a Lighthouse Audit](https://developers.google.com/web/tools/lighthouse/)
 
-Lighthouse is an open-source tool for improving quality of web pages by auditing it for _performance, accessibility, PWA, SEO, and more_. The easiest way is to [run it in Chrome DevTools](https://developers.google.com/web/tools/lighthouse/#devtools) and review the generated report. Here is what that looked like for my initial [deployed site](https://docu-demo.nitya.dev)
+Lighthouse is an open-source tool for improving quality of web pages by auditing it for _performance, accessibility, PWA, SEO, and more_. The easiest way is to [run it in DevTools](https://developers.google.com/web/tools/lighthouse/#devtools) (in a Chromium-powered browser like Google Chrome, Microsoft Edge or Brave) and review the generated report. Here is the result for my initial [deployed site](https://docu-demo.nitya.dev)
 
 | | |
 |:---| :---|
@@ -344,7 +344,12 @@ This configures your app to use the referenced manifest (to set as `<HEAD>` link
 
 > 3. TEST PWA
 
-Want to test this locally? The plugin activates only for production builds, so clear-build-and-serve:
+How can you check if the PWA functionality is working correctly, and if there are ways to improve it.
+
+> 1. TEST APP LOCALLY
+
+The plugin activates only for production builds. So clear-build-and-serve on `https://localhost:3000` to run locally.
+
 ```
 $ cd www/
 $ npm run clear
@@ -352,11 +357,84 @@ $ npm run build
 $ npm run serve
 ```
 
-You'll need to deploy this to a host supporting `HTTPS` - so this is a good time to commit changes and trigger deploy actions. Then test site PWA capabilities in two contexts:
- * [App Installation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#app-installation-support)
- * [Offline Mode (Precaching)](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#offline-mode-precaching)
+Then _inspect_ the webpage - e.g., in a Chromium-powered browser (e.g., Microsoft Edge or Google Chrome) - and look for the _Applications_ tab. 
+|Check out the Manifest section - it should let you know of any issues to be addressed.| Check out the Service Workers section. It should show a registered worker.|
+|:---|:---|
+|![Screenshot of inspected localhost PWA (Manifest)](static/localhost-inspect.png)|![Screenshot of inspected localhost PWA (Manifest](static/localhost-sw.png)|
+
+If you can see something similar, it tells you that the pwa-plugin is configured correctly. Now all we have to do is start fixing the issues. 
+
+
+> 2. RUN PWA AUDITS
+
+First, let's re-run audits so we can get a list of all issue at one shot, before starting fixes. First, push the deploy to remote host so it is publicly accessible.
+
+`LIGHTHOUSE AUDIT`:
+
+Visit [the deployed page](https://docu-demo.nitya.dev) in a Chromium-powered browser (Google Chrome, Microsoft Edge, Brave etc.). Then `inspect` the page and click `Generate Report` in the Lighthouse tab.Run it for the default `mobile` option, then repeat with `desktop` to audit page performance for both narrow-screen and wide-screen device form factors. _Yes!! Our scores have improved!_.
+
+| | |
+|:---| :---|
+|Lighthouse Report - Mobile  |  Lighthouse Report - Desktop. |
+| ![Lighthouse Report - Mobile](static/lighthouse-mobile.png) | ![Lighthouse Report - Desktop](static/lighthouse-desktop.png) |
+
+
+`PWABUILDER AUDIT`:
+
+Visit the [PWA Builder](https://www.pwabuilder.com) site and enter your [site URL](https://docu-demo.nitya.dev) for auditing. Here's my new report - along with some guidance on improvements to make it appstore-ready.
+
+| | |
+|:---| :---|
+| **PWABuilder Report** - _note how our scores have improved dramatically from 30 to 160!_ |  **PWA Builder Alert** - _provides [actionable advice](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/icon-theme-color#define-icons) to make PWA appstore-ready_. |
+| ![PWABuilder Report](static/pwabuilder-report.png) | ![PWABuilder Alert](static/pwabuilder-alert.png) |
+
+
+> 3. TEST PWA CAPABILITIES
+
+We have a PWA-enabled site deployed! Let's test it for two key features that differentiate PWA from regular web apps:
+
+ * [App Installation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#app-installation-support) - can I install this to home screen and use it like a native app?
+ * [Offline Mode (Precaching)](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#offline-mode-precaching) - does the site remain accessible when I am offline?
+
+ Let's look at each of these.
+
+ > 1. APP INSTALLATION
+
+ Can I install this app on my home screen (e.g., on mobile) and have it be accessible on my dock (e.g., desktop) and via other means (e.g., Search) just like native apps? 
  
-Then re-run the Lighthouse and PWA Builder audits and see how they compare to the first results. Ready? Let's commit!
+ Let's try it out. See guidance on [How to install and uninstall apps](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Installing) on various mobile and desktop browsers. Also see: [App Installation | Docusaurus](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#app-installation-support)
+ 
+ 
+
+| | **Here is what my experience with Microsoft Edge (browser) on a macOS laptop (device) looks like.** |
+|:---|:---|
+| Tap the `...` on Edge browsers, navigate to `Apps > Install This Site As An App` to trigger install. | ![Microsoft Edge App Install Flow](static/edge-app-install.png) |
+| This is the installed _standalone_ app experience. <br/> Notice the lack of browser chrome (no address bar) - and alert indicating new version available. | ![Edge-installed App in standalone mode](static/edge-app-standalone.png) |
+| And this is my dock on macOS - note how I can pink this to dock and launch instantly, just like native.| ![PWABuilder Repo`rt](static/edge-app-macos.png) |
+
+
+ > 2. OFFLINE MODE
+
+A big advantage of platform-specific (native) apps is their ability to function even when the device is offline. Can we get the same kind of reliable offline access in PWA? That's what service workers do for us.
+
+Let's try it out. Install the app using the browser-appropriate actions. For example:
+ * in mobile Chrome: click "..." then select `Add To Home Screen`
+ * in mobile Edge: click "..." then select `Add To Phone`.
+
+In either case, you should now see a launcher icon on your home screen, its name corresponding to that given in your manifest. 
+ * On my Android phone, I also see a subtle browser icon (Edge or Chrome) inside the launcher icon, to let me know which browser PWA was installed from.
+ * I have different browsers associated with different profiles (Personal vs. Work) on my Android Phone. And, just like other native apps, the installed PWA launcher icon is enabled only when the relevant profile is active.
+
+Now, put your phone into `Flight mode` (effectively offline).
+ * Launch a standard browser now and go to your [site link](https://docu-demo.nitya.dev), you should get the dreaded `No internet` page indicating the device is offline.
+ * Now try launching the installed PWA from home screen. It should launch _and_ allow you to navigate to other links (e.g., visit Home, Blog and Tutorial pages). 
+
+An installable and offline-ready PWA ftw! Also see: [Offline Mode (Precaching)](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-pwa#offline-mode-precaching)
+
+> 3. FIXING AUDIT-IDENTIFIED ISSUES
+
+We now have a working PWA but the audit identifies a number of issues we can fix. Let's do that next - for now we don't need to fix _everything_ - for example, we can wait to learn more about service worker caching strategies before exploring some of those fixes. But we can fix simpler things like manifest updates. Next.
+
 
 ---
 
